@@ -21,10 +21,15 @@
                 
                 <div class="waitlist-section">
                     <p class="waitlist-text">Be the first to know when we launch</p>
-                    <form class="email-form">
-                        <input type="email" placeholder="Enter your email" required>
+                    <form id="waitlist-form" class="email-form">
+                        <label>
+                            <input type="email" name="email" placeholder="Enter your email" required>
+                        </label>
                         <button type="submit" class="btn-notify">Notify Me</button>
                     </form>
+                    <div id="confirmation-message" class="confirmation-message" style="display: none;">
+                        <p>✓ Thanks for joining! We'll notify you soon.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -37,5 +42,21 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('waitlist-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = this;
+            const confirmationMessage = document.getElementById('confirmation-message');
+            
+            // Hide form and show confirmation
+            form.style.display = 'none';
+            confirmationMessage.style.display = 'block';
+            
+            // Optional: Reset form for next time
+            form.reset();
+        });
+    </script>
 </body>
 </html>
