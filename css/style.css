@@ -1,45 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+    background: linear-gradient(135deg, #0a0e27 0%, #16213e 100%);
+    color: #fff;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(10, 14, 39, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Hero Section */
+.hero {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    text-align: center;
+    padding: 4rem 2rem;
 }
 
 .container {
-    max-width: 600px;
-    padding: 40px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 700px;
+    text-align: center;
 }
 
-h1 {
-    font-size: 3em;
-    margin-bottom: 0.2em;
-    color: #007bff;
+.hero-content {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.brand-title {
+    font-size: 4.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #00d4ff 0%, #0099ff 50%, #6366f1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+}
+
+.brand-tagline {
+    font-size: 1.3rem;
+    color: #a0aec0;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
 }
 
 .coming-soon {
-    font-size: 1.5em;
-    margin-bottom: 1.5em;
-    color: #6c757d;
+    font-size: 1.1rem;
+    color: #cbd5e0;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+/* Waitlist Section */
+.waitlist-section {
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.waitlist-text {
+    font-size: 1rem;
+    color: #cbd5e0;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.email-form {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.email-form input {
+    padding: 0.95rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1rem;
+    min-width: 280px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.email-form input::placeholder {
+    color: #a0aec0;
+}
+
+.email-form input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #00d4ff;
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+}
+
+.btn-notify {
+    padding: 0.95rem 2rem;
+    background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+    color: #0a0e27;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.btn-notify:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+}
+
+.btn-notify:active {
+    transform: translateY(0);
+}
+
+/* Footer */
+.footer {
+    background-color: rgba(10, 14, 39, 0.8);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem 2rem 1.5rem;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    margin-bottom: 2rem;
+}
+
+.contact-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #00d4ff;
+    font-weight: 700;
 }
 
 .contact-info p {
-    margin: 0.5em 0;
-    font-size: 1em;
+    font-size: 0.95rem;
+    color: #cbd5e0;
+    margin: 0.5rem 0;
 }
 
 .contact-info a {
-    color: #007bff;
+    color: #00d4ff;
     text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
 }
 
 .contact-info a:hover {
+    color: #0099ff;
     text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .brand-title {
+        font-size: 3rem;
+    }
+
+    .brand-tagline {
+        font-size: 1.1rem;
+    }
+
+    .email-form {
+        flex-direction: column;
+    }
+
+    .email-form input {
+        min-width: 100%;
+    }
+
+    .email-form button {
+        min-width: 100%;
+    }
 }
