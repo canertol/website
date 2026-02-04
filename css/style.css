@@ -1,0 +1,45 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 0.2em;
+    color: #007bff;
+}
+
+.coming-soon {
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+    color: #6c757d;
+}
+
+.contact-info p {
+    margin: 0.5em 0;
+    font-size: 1em;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
